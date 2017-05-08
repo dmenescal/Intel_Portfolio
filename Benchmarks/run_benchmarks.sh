@@ -13,7 +13,7 @@ python daal_cholesky.py
 cd ..
 
 # Go to Yatch Linear Regression folder to run codes
-cd LinearRegression/YatchLR
+cd LinearRegression/Yatch
 
 echo "Running Scipy LR code..."
 python scipy_LR.py
