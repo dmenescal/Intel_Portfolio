@@ -1,6 +1,7 @@
 # set up Python environment: numpy for numerical routines, and matplotlib for plotting
 import numpy as np
 import matplotlib.pyplot as plt
+import subprocess
 
 # set display defaults
 plt.rcParams['figure.figsize'] = (10, 10)        # large images
@@ -19,8 +20,8 @@ import caffe
 import os
 if os.path.isfile('models/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel'):
     print 'CaffeNet found. VETHIS GUD'
-else:
-    print 'Downloading pre-trained CaffeNet model...'
+else: 
+    print 'Run ../scripts/download_model_binary.py ../models/bvlc_reference_caffenet on your Terminal'
     #../scripts/download_model_binary.py ../models/bvlc_reference_caffenet
 
 caffe.set_mode_cpu()
@@ -71,8 +72,8 @@ print 'predicted class is:', output_prob.argmax()
 
 # load ImageNet labels
 labels_file = 'data/ilsvrc12/synset_words.txt'
-#if not os.path.exists(labels_file):
-#    ../data/ilsvrc12/get_ilsvrc_aux.sh
+if not os.path.exists(labels_file):
+    print 'Run../data/ilsvrc12/get_ilsvrc_aux.sh on your Terminal.'
     
 labels = np.loadtxt(labels_file, str, delimiter='\t')
 
