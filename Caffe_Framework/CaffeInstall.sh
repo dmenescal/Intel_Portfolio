@@ -15,6 +15,7 @@
 ####################################################################################################
 
 sudo apt-get update &&
+sudo apt install openssh-server &&
 sudo apt-get -y install build-essential git cmake &&
 sudo apt-get -y install libprotobuf-dev libleveldb-dev libsnappy-dev &&
 sudo apt-get -y install libopencv-dev libhdf5-serial-dev protobuf-compiler &&
